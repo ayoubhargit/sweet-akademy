@@ -3,354 +3,914 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automation Training Academy</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<title>Sweet Center | Industrial Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
+:root {
+    --bg-1: #f7f4ec;
+    --bg-2: #fefdf8;
+    --surface: #ffffff;
+    --text: #142033;
+    --muted: #5a6473;
+    --brand: #d35f27;
+    --brand-dark: #9f4419;
+    --accent: #0f6c78;
+    --line: #e6dfd2;
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --shadow-soft: 0 18px 40px rgba(20, 32, 51, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
     margin: 0;
-    background: #f4f6fa;
-    color: #333;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 5% 0%, rgba(211, 95, 39, 0.16), transparent 30%),
+        radial-gradient(circle at 95% 0%, rgba(15, 108, 120, 0.14), transparent 28%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2));
 }
 
-/* NAVIGATION */
+a {
+    color: inherit;
+}
+
+.top-shell {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
 nav {
-    background: #0d6efd;
-    padding: 15px;
-    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin: 14px auto 0;
+    width: min(1180px, 92%);
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 12px 30px rgba(20, 32, 51, 0.08);
 }
 
-nav a {
-    color: white;
+.nav-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
-    margin: 0 20px;
-    font-weight: bold;
 }
 
-nav a:hover {
+.nav-logo {
+    height: 46px;
+    width: auto;
+    border-radius: 12px;
+}
+
+.brand-name {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.2px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: var(--brand-dark);
+}
+
+.nav-register {
+    background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+    color: #fff !important;
+    padding: 10px 16px;
+    border-radius: 999px;
+    box-shadow: 0 8px 18px rgba(159, 68, 25, 0.35);
+}
+
+.lang-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.lang-buttons button {
+    border: 1px solid var(--line);
+    background: #fff;
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-weight: 700;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.lang-buttons button:hover {
+    border-color: var(--brand);
+    color: var(--brand-dark);
+}
+
+header {
+    padding: 52px 0 24px;
+}
+
+.hero {
+    border-radius: var(--radius-lg);
+    background:
+        linear-gradient(120deg, rgba(211, 95, 39, 0.94), rgba(159, 68, 25, 0.95) 45%, rgba(15, 108, 120, 0.9));
+    color: #fff;
+    padding: clamp(26px, 4vw, 44px);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    z-index: -1;
+}
+
+.hero::before {
+    width: 280px;
+    height: 280px;
+    right: -90px;
+    top: -110px;
+}
+
+.hero::after {
+    width: 210px;
+    height: 210px;
+    left: -70px;
+    bottom: -100px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(31px, 4.5vw, 56px);
+    letter-spacing: 0.3px;
+    line-height: 1.06;
+}
+
+.hero p {
+    margin: 14px 0 20px;
+    max-width: 760px;
+    font-size: clamp(15px, 2.1vw, 19px);
+    line-height: 1.65;
+}
+
+.hero-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    gap: 14px;
+}
+
+.meta-card {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 14px;
+    padding: 13px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.meta-card i {
+    font-size: 16px;
+}
+
+section {
+    margin: 28px auto;
+    width: min(1180px, 92%);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: clamp(22px, 3vw, 34px);
+    box-shadow: var(--shadow-soft);
+}
+
+h2 {
+    margin: 0 0 20px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(23px, 3vw, 34px);
+    color: var(--brand-dark);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.about-text p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.75;
+    font-size: 16px;
+}
+
+.owner-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    background: linear-gradient(160deg, #fffdf8, #fff5ee);
+}
+
+.owner-card h3 {
+    margin: 0 0 12px;
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--text);
+}
+
+.owner-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.owner-row img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 6px;
+}
+
+.owner-row span {
+    font-weight: 700;
+}
+
+.location-card {
+    margin-top: 16px;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.location-card a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.location-card a:hover {
     text-decoration: underline;
 }
 
-/* HEADER */
-header {
-    background: linear-gradient(135deg, #0d6efd, #084298);
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-} 
-
-
-
-
-header h1 {
-    margin: 0;
-    font-size: 36px;
-}
-
-/* SECTIONS */
-section {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-section h2 {
-    text-align: center;
-    color: #0d6efd;
-    margin-bottom: 30px;
-}
-
-/* TRAINING SECTION */
 .training-container {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 24px;
 }
 
 .training-card {
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid #ddd;
-    border-radius: 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
     overflow: hidden;
-    background: #ffffff;
+    background: #fff;
 }
 
 .training-card img {
     width: 350px;
     object-fit: cover;
+    min-height: 100%;
 }
 
 .training-content {
     flex: 1;
-    padding: 25px;
+    min-width: 290px;
+    padding: 23px;
 }
 
 .training-content h3 {
-    margin-top: 0;
-    color: #084298;
+    margin: 0 0 10px;
+    color: var(--text);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 24px;
+}
+
+.training-content h4 {
+    margin-bottom: 9px;
+    color: var(--brand-dark);
 }
 
 .training-content ul {
-    padding-left: 20px;
+    padding-left: 22px;
+    margin: 10px 0;
+    line-height: 1.7;
 }
 
 .price {
     margin-top: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    color: green;
+    font-size: 19px;
+    font-weight: 800;
+    color: #147d3f;
 }
 
-/* Unavailable text */
 .unavailable {
-    color: red;
-    font-weight: bold;
+    color: #ca3c30;
+    font-weight: 700;
+    margin: 12px 0 0;
 }
 
-/* CONTACT */
-.contact-info {
-    text-align: center;
-    font-size: 18px;
-}
 .summary {
     margin-top: 15px;
     padding: 15px;
-    background: #eef3ff;
-    border-left: 4px solid #0d6efd;
-    border-radius: 6px;
-    font-size: 14px;
-}    
-
-/* FORM */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    background: #f4f8fd;
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    color: #2c3a4e;
+    line-height: 1.65;
 }
 
-input, select, textarea {
+.location-section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.map-card,
+.location-details {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    background: #fff;
+}
+
+.location-details p {
+    margin: 0 0 10px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.map-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.contact-panel {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    background: linear-gradient(180deg, #fffdf8, #fff8ef);
+}
+
+.contact-panel h3 {
+    margin: 0 0 14px;
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--brand-dark);
+    font-size: 20px;
+}
+
+.contact-list {
+    display: grid;
+    gap: 10px;
+}
+
+.contact-item {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-weight: 600;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.field-wide {
+    grid-column: 1 / -1;
+}
+
+.optional-box {
+    grid-column: 1 / -1;
+    border: 1px dashed #d8b99f;
+    background: #fffaf4;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.optional-box h3 {
+    margin: 0 0 10px;
+    color: var(--brand-dark);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+}
+
+.optional-note {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
     padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+    border-radius: 10px;
+    border: 1px solid #d7deea;
     font-size: 15px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
 button {
+    grid-column: 1 / -1;
     padding: 15px;
-    background: #0d6efd;
-    color: white;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    border-radius: 12px;
     font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(159, 68, 25, 0.34);
 }
 
 button:hover {
-    background: #084298;
+    filter: brightness(1.06);
 }
 
-/* FOOTER */
 footer {
+    margin-top: 34px;
+    background: #162233;
+    color: #fff;
     text-align: center;
-    padding: 20px;
-    background: #eee;
-    margin-top: 40px;
+    padding: 22px 12px;
 }
 
-/* RESPONSIVE */
-@media (max-width:768px){
+.whatsapp-float {
+    position: fixed;
+    width: 62px;
+    height: 62px;
+    right: 28px;
+    bottom: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    background: #25d366;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24);
+    z-index: 999;
+    transition: transform 0.25s ease;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: revealUp 0.6s ease forwards;
+}
+
+.reveal-delay-1 { animation-delay: 0.08s; }
+.reveal-delay-2 { animation-delay: 0.16s; }
+.reveal-delay-3 { animation-delay: 0.24s; }
+
+@keyframes revealUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 980px) {
+    .nav-links {
+        display: none;
+    }
+
+    .about-grid,
+    .location-section-grid,
+    .contact-info,
+    .hero-meta {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .training-card img {
+        width: 100%;
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 640px) {
     nav {
-        flex-direction: column;
-        align-items: flex-start;
+        width: 94%;
+        padding: 10px 12px;
     }
 
-    nav div:nth-child(2) {
-        margin-top: 10px;
+    .brand-name {
+        display: none;
+    }
+
+    .lang-buttons button {
+        padding: 6px 9px;
+        font-size: 12px;
+    }
+
+    .whatsapp-float {
+        right: 16px;
+        bottom: 16px;
+        width: 56px;
+        height: 56px;
+        font-size: 27px;
     }
 }
-
 </style>
 </head>
-
 <body>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#training">Available Training</a>
-    <a href="#contact">Contact</a>
-    <a href="#registration">Registration</a>
-</nav>
-	
-<header>
-    <div style="text-align:center;">
-        <img src="images/logo.png" 
-             alt="Automation Academy Logo" 
-             style="max-width:300px; height:center; margin-bottom:40px;">
+    <a href="#" class="nav-brand">
+        <img src="images/logo1.png" alt="Sweet Center Logo" class="nav-logo">
+        <span class="brand-name">Sweet Center</span>
+    </a>
+
+    <div class="nav-links">
+        <a href="#about" data-en="About" data-fr="A propos">About</a>
+        <a href="#training" data-en="Available Training" data-fr="Formations disponibles">Available Training</a>
+        <a href="#location" data-en="Location" data-fr="Emplacement">Location</a>
+        <a href="#contact" data-en="Contact" data-fr="Contact">Contact</a>
+        <a href="#registration" class="nav-register" data-en="Register Now" data-fr="Inscrivez-vous">Register Now</a>
     </div>
-    <h1>Automation 2 Academy<h1>
-    <p>Professional PLC, Robotics & Industry 4.0 Training</p>
+
+    <div class="lang-buttons">
+        <button type="button" onclick="setLanguage('en')">EN</button>
+        <button type="button" onclick="setLanguage('fr')">FR</button>
+    </div>
+</nav>
+
+<header>
+    <div class="top-shell">
+        <div class="hero reveal">
+            <h1 data-en="Sweet Center Industrial Training" data-fr="Formation industrielle Sweet Center">Sweet Center Industrial Training</h1>
+            <p data-en="Professional PLC, Robotics & Industry 4.0 Training, 100% practical & 100% presential training"
+               data-fr="Formation professionnelle PLC, Robotique et Industrie 4.0, 100% pratique et 100% en presentiel">
+               Professional PLC, Robotics & Industry 4.0 Training, 100% practical & 100% presential training
+            </p>
+            <div class="hero-meta">
+                <div class="meta-card">
+                    <i class="fa-solid fa-certificate"></i>
+                    <span data-en="Advanced hands-on learning tracks" data-fr="Parcours avances bases sur la pratique">Advanced hands-on learning tracks</span>
+                </div>
+                <div class="meta-card">
+                    <i class="fa-solid fa-building"></i>
+                    <span data-en="Site owner: Sweet Center" data-fr="Proprietaire du site : Sweet Center">Site owner: Sweet Center</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 
-<section id="about">
-    <h2>About Us</h2>
-    <p>
-        Automation Training Academy provides high-quality industrial training in PLC programming,
-        robotics, and smart manufacturing systems. Our mission is to prepare students,
-        technicians and engineers with practical skills used in real factories.
-    </p>
+<section id="about" class="reveal reveal-delay-1">
+    <h2 data-en="About Sweet Center" data-fr="A propos de Sweet Center">About Sweet Center</h2>
+    <div class="about-grid">
+        <div class="about-text">
+            <p data-en="Sweet Center provides high-quality industrial training in PLC programming, robotics, and smart manufacturing systems. Our mission is to prepare students, technicians and engineers with practical skills used in real factories."
+               data-fr="Sweet Center fournit des formations industrielles de haute qualite en programmation PLC, robotique et systemes de fabrication intelligents. Notre mission est de preparer les etudiants, techniciens et ingenieurs avec des competences pratiques utilisees dans les usines reelles.">
+               Sweet Center provides high-quality industrial training in PLC programming, robotics, and smart manufacturing systems. Our mission is to prepare students, technicians and engineers with practical skills used in real factories.
+            </p>
+        </div>
+        <aside class="owner-card">
+            <h3 data-en="Site Ownership" data-fr="Propriete du site">Site Ownership</h3>
+            <div class="owner-row">
+                <img src="images/sweetcenter.png" alt="Sweet Center">
+                <span data-en="Sweet Center" data-fr="Sweet Center">Sweet Center</span>
+            </div>
+            <div class="location-card">
+                <strong data-en="Main Location" data-fr="Emplacement principal">Main Location</strong><br>
+                <span data-en="Tangier, Morocco" data-fr="Tanger, Maroc">Tangier, Morocco</span><br>
+                <a href="#location" data-en="See full location details" data-fr="Voir les details de localisation">See full location details</a>
+            </div>
+        </aside>
+    </div>
 </section>
 
-<section id="training">
-    <h2>Available Training</h2>
+<section id="training" class="reveal reveal-delay-1">
+    <h2 data-en="Available Training" data-fr="Formations disponibles">Available Training</h2>
 
     <div class="training-container">
 
-        <!-- PLC Beginner -->
         <div class="training-card">
             <img src="images/plc.jpg" alt="PLC Programming">
             <div class="training-content">
-                <h3>PLC Programming (Beginner → Intermediate)</h3>
-                <p><strong>Duration:</strong> 7 Weeks (26 Hours)</p>
+                <h3 data-en="PLC Programming (Beginner → Intermediate)" data-fr="Programmation PLC (Debutant → Intermediaire)">PLC Programming (Beginner → Intermediate)</h3>
+                <p data-en="<strong>Duration:</strong> 7 Weeks (26 Hours)" data-fr="<strong>Duree :</strong> 7 Semaines (26 Heures)"><strong>Duration:</strong> 7 Weeks (26 Hours)</p>
 
-                <h4>Modules:</h4>
+                <h4 data-en="Modules:" data-fr="Modules :">Modules:</h4>
                 <ul>
-                    <li>Introduction to Automation (Siemens)</li>
-                    <li>PLC Hardware – S7-1200</li>
-                    <li>FBD & Ladder Programming</li>
-                    <li>Timers & Counters</li>
-                    <li>Digital & Analog I/O</li>
-                    <li>Practical Projects</li>
-                    <li>HMI Integration</li>
-                    <li>Final Project</li>
-                    <li>Certification</li>
+                    <li data-en="Introduction to Automation (Siemens)" data-fr="Introduction a l'automatisation (Siemens)">Introduction to Automation (Siemens)</li>
+                    <li data-en="PLC Hardware – S7-1200" data-fr="Materiel PLC – S7-1200">PLC Hardware – S7-1200</li>
+                    <li data-en="FBD & Ladder Programming" data-fr="Programmation FBD & Ladder">FBD & Ladder Programming</li>
+                    <li data-en="Timers & Counters" data-fr="Timers & Compteurs">Timers & Counters</li>
+                    <li data-en="Digital & Analog I/O" data-fr="Entrees/Sorties Numeriques & Analogiques">Digital & Analog I/O</li>
+                    <li data-en="Practical Projects" data-fr="Projets pratiques">Practical Projects</li>
+                    <li data-en="HMI Integration" data-fr="Integration HMI">HMI Integration</li>
+                    <li data-en="Final Project" data-fr="Projet final">Final Project</li>
+                    <li data-en="Certification" data-fr="Certification">Certification</li>
                 </ul>
-                <div class="summary">
-                    After this course, you will understand the fundamentals of industrial automation,
-                    confidently program Siemens S7-1200 PLC using Ladder and FBD,
-                    configure digital and analog inputs/outputs,
-                    implement timers and counters,
-                    and develop complete practical automation projects with HMI integration.
+                <div class="summary" data-en="After this course, you will understand the fundamentals of industrial automation, confidently program Siemens S7-1200 PLC using Ladder and FBD, configure digital and analog inputs/outputs, implement timers and counters, and develop complete practical automation projects with HMI integration."
+                     data-fr="Apres ce cours, vous comprendrez les bases de l'automatisation industrielle, programmerez en toute confiance le PLC Siemens S7-1200 en Ladder et FBD, configurerez les entrees/sorties numeriques et analogiques, utiliserez timers et compteurs, et developperez des projets complets avec integration HMI.">
+                    After this course, you will understand the fundamentals of industrial automation, confidently program Siemens S7-1200 PLC using Ladder and FBD, configure digital and analog inputs/outputs, implement timers and counters, and develop complete practical automation projects with HMI integration.
                 </div>
-                <p class="price">Price: 1200 MAD</p>
+                <p class="price" data-en="Price: 1200 MAD" data-fr="Prix : 1200 MAD">Price: 1200 MAD</p>
             </div>
         </div>
 
-        <!-- PLC Advanced -->
         <div class="training-card">
             <img src="images/plc1.jpg" alt="Advanced PLC Programming">
             <div class="training-content">
-                <h3>PLC Programming (Intermediate → Advanced)</h3>
-                <p><strong>Duration:</strong> 10 Weeks (40 Hours)</p>
+                <h3 data-en="PLC Programming (Intermediate → Advanced)" data-fr="Programmation PLC (Intermediaire → Avance)">PLC Programming (Intermediate → Advanced)</h3>
+                <p data-en="<strong>Duration:</strong> 10 Weeks (40 Hours)" data-fr="<strong>Duree :</strong> 10 Semaines (40 Heures)"><strong>Duration:</strong> 10 Weeks (40 Hours)</p>
 
-                <h4>Modules:</h4>
+                <h4 data-en="Modules:" data-fr="Modules :">Modules:</h4>
                 <ul>
-                    <li>Siemens S7-300 / 1200 / 1500</li>
-                    <li>Ladder & STL Programming</li>
-                    <li>Profibus & Profinet Communication</li>
-                    <li>Vision Sensors (IV2, IFM) & Integration with PLC </li>
-                    <li>Industrial Printers & ZPL Programming</li>
-                    <li>Communication between Zebra printer and PLC using Ethernet TCP/IP</li>
-                    <li>Motor & Drive Communication</li>
-                    <li>PT100 & Programming of RTD Modules</li>
-                    <li>PID Programming Basics</li>
-                    <li>Final Project & Certification</li>
-                    
-                    
+                    <li data-en="Siemens S7-300 / 1200 / 1500" data-fr="Siemens S7-300 / 1200 / 1500">Siemens S7-300 / 1200 / 1500</li>
+                    <li data-en="Ladder & STL Programming" data-fr="Programmation Ladder & STL">Ladder & STL Programming</li>
+                    <li data-en="Profibus & Profinet Communication" data-fr="Communication Profibus & Profinet">Profibus & Profinet Communication</li>
+                    <li data-en="Vision Sensors (IV2, IFM) & Integration with PLC" data-fr="Capteurs Vision (IV2, IFM) & Integration avec PLC">Vision Sensors & Integration with PLC</li>
+                    <li data-en="Industrial Printers & ZPL Programming" data-fr="Imprimantes industrielles & Programmation ZPL">Industrial Printers & ZPL Programming</li>
+                    <li data-en="Communication between Zebra printer and PLC using Ethernet TCP/IP" data-fr="Communication entre imprimante Zebra et PLC via Ethernet TCP/IP">Communication between Zebra printer and PLC</li>
+                    <li data-en="Motor & Drive Communication" data-fr="Communication Moteur & Variateur">Motor & Drive Communication</li>
+                    <li data-en="PT100 & Programming of RTD Modules" data-fr="PT100 & Programmation des modules RTD">PT100 & Programming of RTD Modules</li>
+                    <li data-en="PID Programming Basics" data-fr="Bases de la programmation PID">PID Programming Basics</li>
+                    <li data-en="Final Project & Certification" data-fr="Projet final & Certification">Final Project & Certification</li>
                 </ul>
-                    <div class="summary">
-                    After this course, you will confidently use Siemens PLC,
-                    implement Profinet & Profibus communication,
-                    integrate vision sensors, printers, motors, RTD modules,
-                    and apply PID control in industrial systems.
-                    </div>
-
-                <p class="price">Price: 1799 MAD</p>
+                <div class="summary" data-en="After this course, you will confidently use Siemens PLC, implement Profinet & Profibus communication, integrate vision sensors, printers, motors, RTD modules, and apply PID control in industrial systems."
+                     data-fr="Apres ce cours, vous utiliserez avec confiance le PLC Siemens, implementerez la communication Profinet & Profibus, integrerez capteurs vision, imprimantes, moteurs, modules RTD, et appliquerez le controle PID dans les systemes industriels.">
+                    After this course, you will confidently use Siemens PLC, implement Profinet & Profibus communication, integrate vision sensors, printers, motors, RTD modules, and apply PID control in industrial systems.
+                </div>
+                <p class="price" data-en="Price: 1799 MAD" data-fr="Prix : 1799 MAD">Price: 1799 MAD</p>
             </div>
         </div>
 
-        <!-- Robotics (Unavailable) -->
         <div class="training-card">
             <img src="images/robotics.jpg" alt="Industrial Robotics">
             <div class="training-content">
-                <h3>Industrial Robotics</h3>
-                <p><strong>Duration:</strong> 5 Weeks (20 Hours)</p>
+                <h3 data-en="Industrial Robotics" data-fr="Robotique Industrielle">Industrial Robotics</h3>
+                <p data-en="<strong>Duration:</strong> 5 Weeks (20 Hours)" data-fr="<strong>Duree :</strong> 5 Semaines (20 Heures)"><strong>Duration:</strong> 5 Weeks (20 Hours)</p>
 
-                <h4>Modules:</h4>
+                <h4 data-en="Modules:" data-fr="Modules :">Modules:</h4>
                 <ul>
-                    <li>Robot Types & Applications</li>
-                    <li>Robot Safety</li>
-                    <li>Robot Programming</li>
-                    <li>Simulation</li>
-                    <li>Integration with PLC</li>
+                    <li data-en="Robot Types & Applications" data-fr="Types de robots & Applications">Robot Types & Applications</li>
+                    <li data-en="Robot Safety" data-fr="Securite des robots">Robot Safety</li>
+                    <li data-en="Robot Programming" data-fr="Programmation des robots">Robot Programming</li>
+                    <li data-en="Simulation" data-fr="Simulation">Simulation</li>
+                    <li data-en="Integration with PLC" data-fr="Integration avec PLC">Integration with PLC</li>
                 </ul>
 
-                <p class="unavailable">Temporarily Unavailable - Coming Soon</p>
+                <p class="unavailable" data-en="Temporarily Unavailable - Coming Soon" data-fr="Temporairement indisponible - Bientot disponible">Temporarily Unavailable - Coming Soon</p>
             </div>
         </div>
 
-        <!-- Industry 4.0 (Unavailable) -->
         <div class="training-card">
-            <img src="images/industry4.jpg" alt="Industry 4.0">
+            <img src="images/industry4.jpg" alt="Industry4.0">
             <div class="training-content">
-                <h3>Industry 4.0 & Smart Manufacturing</h3>
-                <p><strong>Duration:</strong> 5 Weeks (20 Hours)</p>
+                <h3 data-en="Industry 4.0 & Smart Manufacturing" data-fr="Industrie 4.0 & Fabrication Intelligente">Industry 4.0 & Smart Manufacturing</h3>
+                <p data-en="<strong>Duration:</strong> 5 Weeks (20 Hours)" data-fr="<strong>Duree :</strong> 5 Semaines (20 Heures)"><strong>Duration:</strong> 5 Weeks (20 Hours)</p>
 
-                <h4>Modules:</h4>
+                <h4 data-en="Modules:" data-fr="Modules :">Modules:</h4>
                 <ul>
-                    <li>Smart Factory Architecture</li>
-                    <li>Industrial Networking</li>
-                    <li>SCADA Systems</li>
-                    <li>Raspberry & IoT</li>
-                    <li>OPC Server</li>
-                    <li>Data Monitoring</li>
-                    <li>Final Project</li>
+                    <li data-en="Smart Factory Architecture" data-fr="Architecture d'usine intelligente">Smart Factory Architecture</li>
+                    <li data-en="Industrial Networking" data-fr="Reseaux industriels">Industrial Networking</li>
+                    <li data-en="SCADA Systems" data-fr="Systemes SCADA">SCADA Systems</li>
+                    <li data-en="Raspberry & IoT" data-fr="Raspberry & IoT">Raspberry & IoT</li>
+                    <li data-en="OPC Server" data-fr="Serveur OPC">OPC Server</li>
+                    <li data-en="Data Monitoring" data-fr="Surveillance des donnees">Data Monitoring</li>
+                    <li data-en="Final Project" data-fr="Projet final">Final Project</li>
                 </ul>
 
-                <p class="unavailable">Temporarily Unavailable - Coming Soon</p>
+                <p class="unavailable" data-en="Temporarily Unavailable - Coming Soon" data-fr="Temporairement indisponible - Bientot disponible">Temporarily Unavailable - Coming Soon</p>
             </div>
         </div>
 
     </div>
 </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-info">
-        <p>Email: info@automationacademy.com</p>
-        <p>Phone: +212 600 000 000</p>
-        <p>Location: Tangier, Morocco</p>
+<section id="location" class="reveal reveal-delay-2">
+    <h2 data-en="Location" data-fr="Emplacement">Location</h2>
+    <div class="location-section-grid">
+        <div class="location-details">
+            <p data-en="Sweet Center welcomes trainees in Tangier, Morocco. The training space is fully equipped for practical sessions in PLC, robotics, and industrial systems."
+               data-fr="Sweet Center accueille les stagiaires a Tanger, Maroc. L'espace de formation est entierement equipe pour les sessions pratiques en PLC, robotique et systemes industriels.">
+               Sweet Center welcomes trainees in Tangier, Morocco. The training space is fully equipped for practical sessions in PLC, robotics, and industrial systems.
+            </p>
+            <p data-en="Address area: Tangier, Morocco" data-fr="Zone d'adresse : Tanger, Maroc">Address area: Tangier, Morocco</p>
+        </div>
+        <div class="map-card">
+            <p data-en="Open map for directions:" data-fr="Ouvrir la carte pour les directions :">Open map for directions:</p>
+            <a href="https://maps.app.goo.gl/9WdDdPnv7RaECJMW6" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-location-dot"></i>
+                <span data-en="View Sweet Center location" data-fr="Voir l'emplacement de Sweet Center">View Sweet Center location</span>
+            </a>
+        </div>
     </div>
 </section>
 
-<section id="registration">
-    <h2>Register Now</h2>
-    <form action="PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE" method="POST">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
+<section id="contact" class="reveal reveal-delay-2">
+    <h2 data-en="Contact" data-fr="Contact">Contact</h2>
+    <div class="contact-info">
+        <div class="contact-panel">
+            <h3 data-en="Call Us In The Center" data-fr="Appelez-nous au centre">Call Us In The Center</h3>
+            <div class="contact-list">
+                <div class="contact-item" data-en="Email: Sweetcenter19@gmail.com" data-fr="Email : Sweetcenter19@gmail.com">Email: Sweetcenter19@gmail.com</div>
+                <div class="contact-item" data-en="Phone: 0633706996" data-fr="Telephone : 0633706996">Phone: 0633706996</div>
+            </div>
+        </div>
+        <div class="contact-panel">
+            <h3 data-en="WhatsApp & Location" data-fr="WhatsApp et emplacement">WhatsApp & Location</h3>
+            <div class="contact-list">
+                <div class="contact-item" data-en="WhatsApp: +34 634 14 01 16" data-fr="WhatsApp : +34 634 14 01 16">WhatsApp: +34 634 14 01 16</div>
+                <div class="contact-item" data-en="Location: Tangier, Morocco" data-fr="Lieu : Tanger, Maroc">Location: Tangier, Morocco</div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<section id="registration" class="reveal reveal-delay-3">
+    <h2 data-en="Register Now" data-fr="Inscrivez-vous">Register Now</h2>
+    <form id="registration-form">
+        <input type="text" name="name" placeholder="Full Name" data-en-placeholder="Full Name" data-fr-placeholder="Nom complet" required>
+        <input type="email" name="email" placeholder="Email" data-en-placeholder="Email" data-fr-placeholder="Email" required>
+
+        <input type="tel" name="phone" placeholder="Phone Number" data-en-placeholder="Phone Number" data-fr-placeholder="Numero de telephone" required>
         <select name="module" required>
-            <option value="">Select Training</option>
-            <option>PLC Beginner</option>
-            <option>PLC Advanced</option>
+            <option value="" data-en="Select Training" data-fr="Selectionnez la formation">Select Training</option>
+            <option data-en="PLC Beginner" data-fr="PLC Debutant">PLC Beginner</option>
+            <option data-en="PLC Advanced" data-fr="PLC Avance">PLC Advanced</option>
         </select>
 
-        <textarea name="message" placeholder="Additional Message"></textarea>
-        <button type="submit">Submit Registration</button>
+        <div class="optional-box">
+            <h3 data-en="Optional Academic Profile" data-fr="Profil academique optionnel">Optional Academic Profile</h3>
+            <input type="text" name="diploma_domain" class="field-wide"
+                   placeholder="Domain of education of diploma obtained (optional)"
+                   data-en-placeholder="Domain of education of diploma obtained (optional)"
+                   data-fr-placeholder="Domaine d'etudes du diplome obtenu (optionnel)">
+            <p class="optional-note"
+               data-en="This optional information helps us evaluate if your profile matches training requirements."
+               data-fr="Cette information optionnelle nous aide a verifier si votre profil correspond aux exigences de la formation.">
+               This optional information helps us evaluate if your profile matches training requirements.
+            </p>
+        </div>
+
+        <textarea name="message" class="field-wide" placeholder="Additional Message" data-en-placeholder="Additional Message" data-fr-placeholder="Message supplementaire"></textarea>
+        <button type="submit" data-en="Submit Registration" data-fr="Envoyer l'inscription">Submit Registration</button>
+        <p class="optional-note field-wide"
+           data-en="After submission, WhatsApp will open with a structured registration message ready to send."
+           data-fr="Apres la soumission, WhatsApp s'ouvrira avec un message d'inscription structure pret a envoyer.">
+           After submission, WhatsApp will open with a structured registration message ready to send.
+        </p>
     </form>
 </section>
 
+<a href="https://wa.me/34634140116?text=Hello%20Sweet%20Center,%20I%20am%20interested%20in%20your%20training%20programs."
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat on WhatsApp">
+   <i class="fab fa-whatsapp"></i>
+</a>
+
 <footer>
-    © 2026 Automation Training Academy. All rights reserved.
+    <span data-en="© 2026 Sweet Center. All rights reserved."
+          data-fr="© 2026 Sweet Center. Tous droits reserves.">
+          © 2026 Sweet Center. All rights reserved.
+    </span>
 </footer>
+
+<script>
+let currentLanguage = "en";
+
+function setLanguage(lang) {
+    currentLanguage = lang;
+    document.documentElement.lang = lang;
+    const elements = document.querySelectorAll("[data-en]");
+
+    elements.forEach((el) => {
+        const enText = el.getAttribute("data-en");
+        const frText = el.getAttribute("data-fr");
+        if (!enText || !frText) return;
+
+        const selectedText = lang === "fr" ? frText : enText;
+        if (selectedText.includes("<") && selectedText.includes(">")) {
+            el.innerHTML = selectedText;
+        } else {
+            el.textContent = selectedText;
+        }
+    });
+
+    const placeholders = document.querySelectorAll("[data-en-placeholder]");
+    placeholders.forEach((el) => {
+        const enPlaceholder = el.getAttribute("data-en-placeholder");
+        const frPlaceholder = el.getAttribute("data-fr-placeholder");
+        el.setAttribute("placeholder", lang === "fr" ? frPlaceholder : enPlaceholder);
+    });
+}
+
+const registrationForm = document.getElementById("registration-form");
+
+registrationForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(registrationForm);
+    const fullName = (formData.get("name") || "").toString().trim();
+    const email = (formData.get("email") || "").toString().trim();
+    const phone = (formData.get("phone") || "").toString().trim();
+    const training = (formData.get("module") || "").toString().trim();
+    const diplomaDomain = (formData.get("diploma_domain") || "").toString().trim();
+    const additionalMessage = (formData.get("message") || "").toString().trim();
+
+    const messageLines = currentLanguage === "fr"
+        ? [
+            "Nouvelle demande d'inscription Sweet Center",
+            "",
+            "Nom complet : " + fullName,
+            "Email : " + email,
+            "WhatsApp / Telephone : " + phone,
+            "Formation choisie : " + training,
+            "Domaine d'etudes du diplome : " + (diplomaDomain || "Non renseigne"),
+            "Message supplementaire : " + (additionalMessage || "Aucun")
+        ]
+        : [
+            "New Sweet Center registration request",
+            "",
+            "Full Name: " + fullName,
+            "Email: " + email,
+            "WhatsApp / Phone: " + phone,
+            "Selected Training: " + training,
+            "Diploma Education Domain: " + (diplomaDomain || "Not provided"),
+            "Additional Message: " + (additionalMessage || "None")
+        ];
+
+    const whatsappMessage = encodeURIComponent(messageLines.join("\n"));
+    window.open("https://wa.me/34634140116?text=" + whatsappMessage, "_blank");
+});
+</script>
 
 </body>
 </html>
-
-
-
